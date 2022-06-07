@@ -1,5 +1,5 @@
 import 'package:enduserapp/database/shared_preference_db.dart';
-import 'package:enduserapp/screens/home/home_screen.dart';
+import 'package:enduserapp/screens/bottom_navigator.dart';
 import 'package:enduserapp/screens/loading_screens/loading.dart';
 import 'package:enduserapp/screens/main.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +20,7 @@ class _AuthWrapperState extends State<AuthWrapper> {
         if (snapshot.data==null) {
           return const MainScreen();
         } else if (snapshot.hasData) {
-          return const HomeScreen();
+          return const BottomNavigator();
         } else if (snapshot.hasError) {
           return Text(snapshot.data.toString());
         } else {

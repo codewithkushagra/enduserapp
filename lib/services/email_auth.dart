@@ -46,6 +46,10 @@ class EmailAuth {
     return state;
   }
 
+  static determiningDelay() async{
+    Future.delayed(const Duration(seconds: 2));
+  }
+
   static Future<bool> signOut() async {
     bool state = false;
     SharedPreferenceDB.resetPreferences();
