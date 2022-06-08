@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:enduserapp/database/shared_preference_db.dart';
 import 'package:enduserapp/model/end_user_model.dart';
-import 'package:enduserapp/services/email_auth.dart';
+import 'package:enduserapp/model/user_data.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class FirestoreDB{
@@ -13,28 +13,28 @@ class FirestoreDB{
   static postDetailsToFirestore(String name) async {
 
     User? user = _auth.currentUser;
-    EmailAuth.endUserModel.email = user!.email;
-    EmailAuth.endUserModel.uid = user.uid;
-    EmailAuth.endUserModel.name = name;
-    EmailAuth.endUserModel.phoneNumber='';
-    EmailAuth.endUserModel.cart=[];
-    EmailAuth.endUserModel.addresses=[];
-    EmailAuth.endUserModel.orders = [];
+    UserData.endUserModel.email = user!.email;
+    UserData.endUserModel.uid = user.uid;
+    UserData.endUserModel.name = name;
+    UserData.endUserModel.phoneNumber='';
+    UserData.endUserModel.cart=[];
+    UserData.endUserModel.addresses=[];
+    UserData.endUserModel.orders = [];
 
     await firebaseFirestore
         .collection('end-users')
         .doc(user.uid)
-        .set(EmailAuth.endUserModel.toMap());
+        .set(UserData.endUserModel.toMap());
   }
 
   static Future<EndUserModel> getEndUser(String? uid) async{
-    await FirebaseFirestore.instance
+    await firebaseFirestore
         .collection('end-users')
         .doc(uid)
         .get()
         .then((value) async {
           print(value.data());
-          EmailAuth.endUserModel=EndUserModel.fromMap(value.data());
+          UserData.endUserModel=EndUserModel.fromMap(value.data());
           SharedPreferenceDB.setValue('uid',value.data()!['uid']);
           SharedPreferenceDB.setValue('email',value.data()!['email']);
           SharedPreferenceDB.setValue('name',value.data()!['name']);
