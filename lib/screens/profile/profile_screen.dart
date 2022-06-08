@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:enduserapp/screens/main.dart';
 import 'package:enduserapp/services/email_auth.dart';
-import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:enduserapp/screens/profile/edit_addresses.dart';
 import 'package:enduserapp/screens/profile/edit_profile.dart';
 import 'package:enduserapp/screens/profile/delete_account.dart';
 import 'package:enduserapp/screens/profile/menu_item.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
