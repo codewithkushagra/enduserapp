@@ -5,11 +5,11 @@ class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> categories = [
-      {"icon": Icons.bolt, "text": "Flash Deal"},
-      {"icon": Icons.bolt, "text": "Bill"},
-      {"icon": Icons.bolt, "text": "Game"},
-      {"icon": Icons.bolt, "text": "Daily Gift"},
-      {"icon": Icons.bolt, "text": "More"},
+      {"icon": Icons.coronavirus_outlined, "text": "Covid    Care"},
+      {"icon": Icons.local_drink_outlined, "text": "Health Drinks"},
+      {"icon": Icons.fitbit, "text": "Diabetes Care"},
+      {"icon": Icons.healing_sharp, "text": "First     Aid"},
+      {"icon": Icons.medical_services_outlined, "text": "View More"},
     ];
     return Padding(
       padding: EdgeInsets.all(20),
