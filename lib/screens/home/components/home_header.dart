@@ -1,4 +1,3 @@
-import 'package:enduserapp/constants.dart';
 import 'package:flutter/material.dart';
 // import 'package:shop_app/screens/cart/cart_screen.dart';
 
@@ -13,32 +12,22 @@ class HomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding:
-      EdgeInsets.symmetric(horizontal: 30),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Icon(
-            Icons.menu,
-            color: Colors.black,
-          ),
-          Container(
-              child: SearchField(),
-            height: 50,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        Expanded(
+          child: Container(
+              height: 50,
             // width: double.infinity,
-           margin: EdgeInsets.all(10),
-            padding: EdgeInsets.symmetric(
+           margin: const EdgeInsets.fromLTRB(10,0,10,0),
+            padding: const EdgeInsets.symmetric(
               horizontal: 20,
-              vertical: 5,
-              // decoration: BoxDecoration(
-              //   color: Color(0xFF4A3298),
-              //   borderRadius: BorderRadius.circular(20),
-              // ),
+              vertical: 4,
           ),
+              child: const SearchField(),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

@@ -4,7 +4,6 @@ import 'package:enduserapp/screens/cart/components/body.dart';
 import 'package:enduserapp/screens/checkout/checkout_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:collection/collection.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);
@@ -27,6 +26,8 @@ class CartScreen extends StatelessWidget {
             letterSpacing: 2
           ),
         ),
+        centerTitle: true,
+        leading: null,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -58,7 +59,6 @@ class CartScreen extends StatelessWidget {
                   width: 250.0,
                   height: 60,
                   child: ElevatedButton(
-
                     onPressed:(Provider.of<UserData>(context).getCartItems.isNotEmpty)?(){
                       Navigator.push(
                         context,

@@ -12,16 +12,16 @@ class DiscountBanner extends StatelessWidget {
     return Container(
       height: 90,
       width: double.infinity,
-      margin: EdgeInsets.all(20),
-      padding: EdgeInsets.symmetric(
+      margin: const EdgeInsets.fromLTRB(20,10,20,20),
+      padding: const EdgeInsets.symmetric(
         horizontal: 20,
         vertical: 15,
       ),
       decoration: BoxDecoration(
-        color: Color(0xFF4A3298),
+        color: const Color(0xFF4A3298),
         borderRadius: BorderRadius.circular(20),
       ),
-      child: Text.rich(
+      child: const Text.rich(
         TextSpan(
           style: TextStyle(color: Colors.white),
           children: [
