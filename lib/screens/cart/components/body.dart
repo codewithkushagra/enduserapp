@@ -1,4 +1,6 @@
+import 'package:enduserapp/model/user_data.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'cart_card.dart';
 
 class Body extends StatefulWidget {
@@ -9,23 +11,23 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  final List<Map<String, String>> demoCart = [
-    {'id': 'hjasdkj', 'title': 'shampoo', 'image': 'https://newassets.apollo247.com/pub/media/catalog/product/t/r/tre0086_4_1.jpg'}
-  ];
+
 
   Widget getListWidget() {
-    if (demoCart.isNotEmpty) {
+    if (Provider.of<UserData>(context).getCartItems.isNotEmpty) {
       return ListView.builder(
-        itemCount: demoCart.length,
+        itemCount: Provider.of<UserData>(context).getCartItems.length,
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
           child: Dismissible(
-            key: Key(demoCart[index]['id'].toString()),
+            key: Key(Provider.of<UserData>(context)
+                .getCartItems[index]
+                .uid
+                .toString()),
             direction: DismissDirection.endToStart,
             onDismissed: (direction) {
-              setState(() {
-                demoCart.removeAt(index);
-              });
+              Provider.of<UserData>(context, listen: false)
+                  .removeFromCart(index);
             },
             background: Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -43,19 +45,18 @@ class _BodyState extends State<Body> {
                 ],
               ),
             ),
-            child: CartCard(cart: demoCart[index]),
+            child: CartCard(
+                cart: Provider.of<UserData>(context).getCartItems[index]),
           ),
         ),
       );
     }
-    return const Expanded(
-      child: Center(
-        child: Text(
-          "Cart is Empty",
-          style: TextStyle(
-            fontSize: 25,
-            color: Colors.black54,
-          ),
+    return const Center(
+      child: Text(
+        "Cart is Empty",
+        style: TextStyle(
+          fontSize: 25,
+          color: Colors.black54,
         ),
       ),
     );
@@ -63,6 +64,7 @@ class _BodyState extends State<Body> {
 
   @override
   Widget build(BuildContext context) {
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: getListWidget(),

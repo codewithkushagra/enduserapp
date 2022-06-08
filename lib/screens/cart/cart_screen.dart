@@ -1,13 +1,23 @@
+import 'package:enduserapp/model/order_model.dart';
 import 'package:enduserapp/model/user_data.dart';
 import 'package:enduserapp/screens/cart/components/body.dart';
+import 'package:enduserapp/screens/checkout/checkout_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:collection/collection.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    int getSum(){
+      int sum=0;
+      for(OrderModel element in Provider.of<UserData>(context).getCartItems){
+        sum=sum+int.parse(element.price!);
+      }
+      return sum;
+    }
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
@@ -24,16 +34,16 @@ class CartScreen extends StatelessWidget {
           child: Column(
             children: [
               Row(
-                children: const [
-                  Text(
+                children: [
+                  const Text(
                       'Subtotal  ',
                     style: TextStyle(
                       fontSize: 30,
                     ),
                   ),
                   Text(
-                    '\₹0',
-                    style: TextStyle(
+                    '\₹${getSum().toString()}',
+                    style: const TextStyle(
                         fontSize: 27,
                         fontWeight: FontWeight.bold
                     ),
@@ -49,7 +59,13 @@ class CartScreen extends StatelessWidget {
                   height: 60,
                   child: ElevatedButton(
 
-                    onPressed:(Provider.of<UserData>(context).getCartItems.isNotEmpty)?(){}:null,
+                    onPressed:(Provider.of<UserData>(context).getCartItems.isNotEmpty)?(){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CheckoutScreen()),
+                      );
+                    }:null,
                     style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all<Color>(Colors.blueAccent),
