@@ -12,10 +12,11 @@ class TopStore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     dynamic getListViewWidget() {
       List<TopStoreCard> cardList=[];
-      if (Provider.of<ShopData>(context).getCartItems.isNotEmpty) {
-        for(ShopModel shop in Provider.of<ShopData>(context).getCartItems){
+      if (Provider.of<ShopData>(context).getShop.isNotEmpty) {
+        for(ShopModel shop in Provider.of<ShopData>(context).getShop){
           cardList.add(TopStoreCard(
             image: shop.image!,
             shopName: shop.shopName!,
@@ -31,7 +32,7 @@ class TopStore extends StatelessWidget {
         }
         return cardList;
       }
-      return const Center(
+      return const [Center(
         child: Text(
           "No Shops Available",
           style: TextStyle(
@@ -39,7 +40,7 @@ class TopStore extends StatelessWidget {
             color: Colors.black54,
           ),
         ),
-      );
+      )];
     }
 
     return SingleChildScrollView(

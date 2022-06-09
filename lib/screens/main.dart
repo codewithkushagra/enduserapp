@@ -83,7 +83,7 @@ class MainScreen extends StatelessWidget {
                             ),
                             child: const Padding(
                               padding: EdgeInsets.only(
-                                  left: 32.0, right: 32.0, top: 12, bottom: 12),
+                                  left: 30.0, right: 30.0, top: 12, bottom: 12),
                               child: Text(
                                 "Get Started",
                                 style: TextStyle(

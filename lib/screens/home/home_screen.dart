@@ -3,8 +3,6 @@ import 'package:enduserapp/screens/home/components/body.dart';
 import 'package:enduserapp/screens/home/components/home_header.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'components/categories.dart';
 import 'components/discount_banner.dart';
 
 class HomeScreen extends StatelessWidget {
