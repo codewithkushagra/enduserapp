@@ -20,14 +20,14 @@ class _LoginScreenState extends State<LoginScreen> {
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(4.0),
           child: Container(
-            color: Colors.black,
+            color: Colors.blueAccent,
             height: 2.0,
           ),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back,color: Colors.black,),
+          icon: const Icon(Icons.arrow_back,color: Colors.blueAccent,),
           onPressed: (){
             Navigator.of(context).pop();
           },
@@ -48,6 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       'Login',
                       style: TextStyle(
                         fontSize: 35,
+                        color: Colors.blueAccent,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -110,7 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           )),
                     ),
                     const SizedBox(
-                      height: 25,
+                      height: 55,
                     ),
                     SizedBox(
                       height: 55,
@@ -128,11 +129,11 @@ class _LoginScreenState extends State<LoginScreen> {
                           }
                         },
                         style: ButtonStyle(
-                          backgroundColor:  MaterialStateProperty.all<Color>(Colors.black),
+                          backgroundColor:  MaterialStateProperty.all<Color>(Colors.blueAccent),
                           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(18.0),
-                                side: const BorderSide(color: Colors.transparent)),
+                                side: const BorderSide(color: Colors.blueAccent)),
                           ),
                         ),
                         child: const Text(

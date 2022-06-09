@@ -30,7 +30,7 @@ class MainScreen extends StatelessWidget {
                     foreground: Paint()
                       ..style = PaintingStyle.stroke
                       ..strokeWidth = 1
-                      ..color = Colors.black,
+                      ..color = Colors.blueAccent,
                   ),
                 ),
                 const Text(
@@ -38,7 +38,7 @@ class MainScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 45,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black38,
+                    color: Colors.lightBlueAccent,
                     letterSpacing: 3,
                   ),
                 ),
@@ -65,12 +65,12 @@ class MainScreen extends StatelessWidget {
                               );
                             },
                             style: ButtonStyle(
-                              backgroundColor:  MaterialStateProperty.all<Color>(Colors.black),
+                              backgroundColor:  MaterialStateProperty.all<Color>(Colors.blueAccent),
                               shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(18.0),
-                                    side: const BorderSide(color: Colors.black54)),
+                                    side: const BorderSide(color: Colors.blueAccent)),
                               ),
                             ),
                             child: const Padding(
@@ -105,11 +105,11 @@ class MainScreen extends StatelessWidget {
                             );
                           },
                           style: ButtonStyle(
-                            backgroundColor:  MaterialStateProperty.all<Color>(Colors.black54),
+                            backgroundColor:  MaterialStateProperty.all<Color>(Colors.lightBlueAccent),
                             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                               RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(18.0),
-                                  side: const BorderSide(color: Colors.transparent)),
+                                  side: const BorderSide(color: Colors.lightBlueAccent)),
                             ),
                           ),
 

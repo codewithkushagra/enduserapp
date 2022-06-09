@@ -22,7 +22,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         bottom: PreferredSize(
             preferredSize: const Size.fromHeight(4.0),
             child: Container(
-              color: Colors.black,
+              color: Colors.blueAccent,
               height: 2.0,
             ),
         ),
@@ -31,7 +31,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
-            color: Colors.black,
+            color: Colors.blueAccent,
           ),
           onPressed: () {
             Navigator.of(context).pop();
@@ -53,6 +53,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       'Registration',
                       style: TextStyle(
                         fontSize: 35,
+                        color: Colors.blueAccent,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -164,7 +165,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           )),
                     ),
                     const SizedBox(
-                      height: 25,
+                      height: 55,
                     ),
                     SizedBox(
                       height: 55,
@@ -188,12 +189,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           }
                         },
                         style: ButtonStyle(
-                          backgroundColor:  MaterialStateProperty.all<Color>(Colors.black),
+                          backgroundColor:  MaterialStateProperty.all<Color>(Colors.blueAccent),
                           shape:
                           MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(18.0),
-                                side: const BorderSide(color: Colors.transparent)),
+                                side: const BorderSide(color: Colors.blueAccent)),
                           ),
                         ),
                         child: const Text(
