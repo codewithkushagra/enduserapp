@@ -1,4 +1,4 @@
-import 'package:enduserapp/model/user_data.dart';
+import 'package:enduserapp/model/cart_data.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'cart_card.dart';
@@ -14,19 +14,19 @@ class _BodyState extends State<Body> {
 
 
   Widget getListWidget() {
-    if (Provider.of<UserData>(context).getCartItems.isNotEmpty) {
+    if (Provider.of<CartData>(context).getCartItems.isNotEmpty) {
       return ListView.builder(
-        itemCount: Provider.of<UserData>(context).getCartItems.length,
+        itemCount: Provider.of<CartData>(context).getCartItems.length,
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
           child: Dismissible(
-            key: Key(Provider.of<UserData>(context)
+            key: Key(Provider.of<CartData>(context)
                 .getCartItems[index]
                 .uid
                 .toString()),
             direction: DismissDirection.endToStart,
             onDismissed: (direction) {
-              Provider.of<UserData>(context, listen: false)
+              Provider.of<CartData>(context, listen: false)
                   .removeFromCart(index);
             },
             background: Container(
@@ -46,7 +46,7 @@ class _BodyState extends State<Body> {
               ),
             ),
             child: CartCard(
-                cart: Provider.of<UserData>(context).getCartItems[index]),
+                cart: Provider.of<CartData>(context).getCartItems[index]),
           ),
         ),
       );

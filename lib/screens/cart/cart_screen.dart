@@ -1,5 +1,5 @@
 import 'package:enduserapp/model/order_model.dart';
-import 'package:enduserapp/model/user_data.dart';
+import 'package:enduserapp/model/cart_data.dart';
 import 'package:enduserapp/screens/cart/components/body.dart';
 import 'package:enduserapp/screens/checkout/checkout_screen.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +12,7 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     int getSum(){
       int sum=0;
-      for(OrderModel element in Provider.of<UserData>(context).getCartItems){
+      for(OrderModel element in Provider.of<CartData>(context).getCartItems){
         sum=sum+int.parse(element.price!);
       }
       return sum;
@@ -59,7 +59,7 @@ class CartScreen extends StatelessWidget {
                   width: 250.0,
                   height: 60,
                   child: ElevatedButton(
-                    onPressed:(Provider.of<UserData>(context).getCartItems.isNotEmpty)?(){
+                    onPressed:(Provider.of<CartData>(context).getCartItems.isNotEmpty)?(){
                       Navigator.push(
                         context,
                         MaterialPageRoute(

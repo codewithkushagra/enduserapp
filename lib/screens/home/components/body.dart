@@ -2,7 +2,7 @@ import 'package:enduserapp/screens/home/components/top_store.dart';
 import 'package:flutter/material.dart';
 
 import 'categories.dart';
-import 'discount_banner.dart';
+
 
 class BodyHome extends StatelessWidget {
   const BodyHome({Key? key}) : super(key: key);
@@ -11,12 +11,11 @@ class BodyHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        children: [
-          const DiscountBanner(),
+        children: const [
           Categories(),
-          const TopStore(),
-          const SizedBox(height: 50),
-          const SizedBox(height: 70),
+          TopStore(),
+          SizedBox(height: 50),
+          SizedBox(height: 70),
         ],
       ),
     );

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class Categories extends StatelessWidget {
+  const Categories({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> categories = [
@@ -12,7 +13,7 @@ class Categories extends StatelessWidget {
       {"icon": Icons.medical_services_outlined, "text": "View More"},
     ];
     return Padding(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,7 +55,7 @@ class CategoryCard extends StatelessWidget {
               height: 55,
               width: 55,
               decoration: BoxDecoration(
-                color: Color(0xFFFFECDF),
+                color: const Color(0xFFFFECDF),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Icon(icon),
