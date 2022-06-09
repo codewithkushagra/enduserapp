@@ -17,17 +17,18 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(4.0),
-          child: Container(
-            color: Colors.blueAccent,
-            height: 2.0,
-          ),
-        ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
+        backgroundColor: Colors.blueAccent,
+        // bottom: PreferredSize(
+        //   preferredSize: const Size.fromHeight(4.0),
+        //   child: Container(
+        //     color: Colors.blueAccent,
+        //     height: 2.0,
+        //   ),
+        // ),
+        // backgroundColor: Colors.transparent,
+        // elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back,color: Colors.blueAccent,),
+          icon: const Icon(Icons.arrow_back,color: Colors.white,),
           onPressed: (){
             Navigator.of(context).pop();
           },
@@ -45,12 +46,22 @@ class _LoginScreenState extends State<LoginScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     const Text(
-                      'Login',
+                      'Welcome',
                       style: TextStyle(
                         fontSize: 35,
-                        color: Colors.blueAccent,
+                        color: Colors.black54,
                         fontWeight: FontWeight.bold,
                       ),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    const Text(
+                      'Now it medicine on just one click',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black45,
+                        ),
                     ),
                     const SizedBox(
                       height: 60,

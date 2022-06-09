@@ -1,5 +1,4 @@
 import 'package:enduserapp/screens/authentication/login_screen.dart';
-import 'package:enduserapp/screens/authentication/register_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
@@ -30,7 +29,7 @@ class MainScreen extends StatelessWidget {
                     foreground: Paint()
                       ..style = PaintingStyle.stroke
                       ..strokeWidth = 1
-                      ..color = Colors.blueAccent,
+                      ..color = Colors.black87,
                   ),
                 ),
                 const Text(
@@ -38,11 +37,20 @@ class MainScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 45,
                     fontWeight: FontWeight.bold,
-                    color: Colors.lightBlueAccent,
+                    color: Colors.transparent,
                     letterSpacing: 3,
                   ),
                 ),
               ]),
+              const Text(
+                'Healthy you is the happy you',
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black54,
+                  letterSpacing: 5,
+                ),
+              ),
               Expanded(
                 child: Center(
                   child: Column(
@@ -77,7 +85,7 @@ class MainScreen extends StatelessWidget {
                               padding: EdgeInsets.only(
                                   left: 32.0, right: 32.0, top: 12, bottom: 12),
                               child: Text(
-                                "Sign In",
+                                "Continue",
                                 style: TextStyle(
                                   fontSize: 25.0,
                                   fontWeight: FontWeight.bold,
@@ -90,42 +98,6 @@ class MainScreen extends StatelessWidget {
                       ),
                       const SizedBox(
                         height: 10,
-                      ),
-                      SizedBox(
-                        width: 250.0,
-                        height: 60,
-                        child: ElevatedButton(
-                          // textColor: NowUIColors.white,
-                          // color: NowUIColors.primary,
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const RegisterScreen()),
-                            );
-                          },
-                          style: ButtonStyle(
-                            backgroundColor:  MaterialStateProperty.all<Color>(Colors.lightBlueAccent),
-                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(18.0),
-                                  side: const BorderSide(color: Colors.lightBlueAccent)),
-                            ),
-                          ),
-
-                          child: const Padding(
-                            padding: EdgeInsets.only(
-                                left: 32.0, right: 32.0, top: 12, bottom: 12),
-                            child: Text(
-                              "Sign Up",
-                              style: TextStyle(
-                                fontSize: 25.0,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 1,
-                              ),
-                            ),
-                          ),
-                        ),
                       ),
                       const SizedBox(
                         height: 25,

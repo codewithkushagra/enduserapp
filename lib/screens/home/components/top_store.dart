@@ -1,5 +1,6 @@
 import 'package:enduserapp/model/shop_data.dart';
 import 'package:enduserapp/model/shop_model.dart';
+import 'package:enduserapp/screens/home/shop_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'section_title.dart';
@@ -19,7 +20,13 @@ class TopStore extends StatelessWidget {
             image: shop.image!,
             shopName: shop.shopName!,
             shopRating: int.parse(shop.rating!),
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ShopDetailScreen(shopDetail: shop)),
+              );
+            },
           ));
         }
         return cardList;
@@ -88,7 +95,7 @@ class TopStoreCard extends StatelessWidget {
                     children: [
                       Expanded(
                         child: SizedBox(
-                          height: 55,
+                          height: 58,
                           child: Container(
                             color: Colors.blueAccent,
                             child: Padding(
@@ -107,7 +114,7 @@ class TopStoreCard extends StatelessWidget {
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
-                                    TextSpan(text: "$shopRating Brands")
+                                    TextSpan(text: "$shopRating Rating")
                                   ],
                                 ),
                               ),
