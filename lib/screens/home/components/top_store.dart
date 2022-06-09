@@ -84,7 +84,7 @@ class TopStoreCard extends StatelessWidget {
         child: GestureDetector(
           onTap: press,
           child: SizedBox(
-            width: 320,
+            width: 330,
             height: 190,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
