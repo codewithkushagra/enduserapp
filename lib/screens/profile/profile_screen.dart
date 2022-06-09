@@ -17,14 +17,13 @@ class ProfileScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 20),
         child: Column(
           children: [
-            //ProfilePic(),
             const SizedBox(height: 20),
             ProfileMenu(
               text: "Edit Profile",
               press: () => {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const EditProfile()),
+                  MaterialPageRoute(builder: (context) =>  const EditProfile()),
                 ),
               },
             ),
