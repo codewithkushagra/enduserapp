@@ -3,11 +3,12 @@ class ShopModel{
   String? description;
   String? shopName;
   String? image;
+  String? address;
   String? rating;
   List<String>? productNameList;
   List<String>? productIdList;
 
-  ShopModel({this.uid,this.description,this.shopName,this.productIdList,this.productNameList,this.image,this.rating});
+  ShopModel({this.uid,this.description,this.shopName,this.productIdList,this.productNameList,this.image,this.rating,this.address});
 
   //data from server
   factory ShopModel.fromMap(map){
@@ -17,6 +18,7 @@ class ShopModel{
       shopName: map['shopName'],
       image: map['image'],
       rating: map['rating'],
+      address: map['address'],
       productNameList: map['productNameList'] is Iterable ? List.from(map['productNameList']) : null,
       productIdList: map['productIdList'] is Iterable ? List.from(map['productIdList']) : null,
     );
@@ -30,6 +32,7 @@ class ShopModel{
       'shopName': shopName,
       'image': image,
       'rating': rating,
+      'address': address,
       'productIdList': productIdList,
       'productNameList': productNameList,
     };

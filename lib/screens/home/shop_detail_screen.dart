@@ -112,7 +112,7 @@ class ShopDetailScreen extends StatelessWidget {
               child: Row(
                 children: const [
                   Text(
-                      'Description',
+                      'Location',
                     style: TextStyle(
                       color: Colors.black54,
                       fontSize: 21,
@@ -128,10 +128,44 @@ class ShopDetailScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      '${shopDetail.description}',
+                      '${shopDetail.address}',
                       style: const TextStyle(
                           color: Colors.black,
                           fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8.0,8.0,8.0,0.0),
+              child: Row(
+                children: const [
+                  Text(
+                    'Description',
+                    style: TextStyle(
+                        color: Colors.black54,
+                        fontSize: 21,
+                        fontWeight: FontWeight.bold
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      '${shopDetail.description}',
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
                       ),
                     ),
                   ),
