@@ -1,5 +1,5 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:enduserapp/model/user_data.dart';
+import 'package:enduserapp/model/cart_data.dart';
 import 'package:enduserapp/screens/cart/cart_screen.dart';
 import 'package:enduserapp/screens/home/home_screen.dart';
 import 'package:enduserapp/screens/orders/OrdersScreen.dart';
@@ -37,8 +37,8 @@ class _BottomNavigatorState extends State<BottomNavigator> with TickerProviderSt
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<UserData>(
-      create: (context) => UserData(),
+    return ChangeNotifierProvider<CartData>(
+      create: (context) => CartData(),
       child: SafeArea(
         child: Scaffold(
           bottomNavigationBar: CurvedNavigationBar(

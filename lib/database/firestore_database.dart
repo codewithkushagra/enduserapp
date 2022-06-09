@@ -1,8 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:enduserapp/database/shared_preference_db.dart';
 import 'package:enduserapp/model/end_user_model.dart';
-import 'package:enduserapp/model/user_data.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
+import '../model/user_data.dart';
 
 class FirestoreDB{
 
