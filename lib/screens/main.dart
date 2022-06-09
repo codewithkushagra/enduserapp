@@ -85,7 +85,7 @@ class MainScreen extends StatelessWidget {
                               padding: EdgeInsets.only(
                                   left: 32.0, right: 32.0, top: 12, bottom: 12),
                               child: Text(
-                                "Continue",
+                                "Get Started",
                                 style: TextStyle(
                                   fontSize: 25.0,
                                   fontWeight: FontWeight.bold,

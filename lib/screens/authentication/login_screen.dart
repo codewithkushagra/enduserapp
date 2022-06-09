@@ -57,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 5,
                     ),
                     const Text(
-                      'Now it medicine on just one click',
+                      'Now, Get Medicines on just one click!',
                       style: TextStyle(
                         fontSize: 14,
                         color: Colors.black45,
