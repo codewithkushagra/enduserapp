@@ -1,10 +1,5 @@
 import 'package:enduserapp/screens/orders/components/body.dart';
 import 'package:flutter/material.dart';
-import 'package:enduserapp/model/order_model.dart';
-import 'package:enduserapp/model/cart_data.dart';
-import 'package:enduserapp/screens/cart/components/body.dart';
-import 'package:enduserapp/screens/checkout/checkout_screen.dart';
-import 'package:provider/provider.dart';
 
 class OrdersScreen extends StatelessWidget {
   const OrdersScreen({Key? key}) : super(key: key);

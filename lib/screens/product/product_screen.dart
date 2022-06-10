@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'components/body.dart';
+
 class ProductScreen extends StatelessWidget {
   const ProductScreen({Key? key, required this.category}) : super(key: key);
   final String category;
@@ -8,16 +10,26 @@ class ProductScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
-        title: Text(category),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back,color: Colors.white,),
-          onPressed: (){
-            Navigator.of(context).pop();
-          },
+        title: Text(
+          category,
+          style: const TextStyle(
+              letterSpacing: 2
+          ),
         ),
+        centerTitle: true,
+        leading: null,
       ),
-      body: Column(
-
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Center(
+          child: Column(
+            children: const [
+              SizedBox(height: 15,),
+              SizedBox(height: 15,),
+              Expanded(child: ProductBody()),
+            ],
+          ),
+        ),
       ),
     );
   }

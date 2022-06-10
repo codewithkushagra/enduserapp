@@ -132,11 +132,13 @@ class _LoginScreenState extends State<LoginScreen> {
                           final String email = emailController.text;
                           final String password = passwordController.text;
                           if(_formkey.currentState!.validate()) {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => EmailLoginWrapper(email: email,password: password)),
-                            );
+                            Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>
+                                EmailLoginWrapper(email: email,password: password)), (Route<dynamic> route) => false);
+                            // Navigator.pushReplacement(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //       builder: (context) => EmailLoginWrapper(email: email,password: password)),
+                            // );
                           }
                         },
                         style: ButtonStyle(
