@@ -1,3 +1,4 @@
+import 'package:enduserapp/screens/product/product_screen.dart';
 import 'package:flutter/material.dart';
 
 class Categories extends StatelessWidget {
@@ -6,10 +7,10 @@ class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> categories = [
-      {"icon": Icons.coronavirus_outlined, "text": "Covid    Care"},
+      {"icon": Icons.coronavirus_outlined, "text": "Covid Care"},
       {"icon": Icons.local_drink_outlined, "text": "Health Drinks"},
       {"icon": Icons.fitbit, "text": "Diabetes Care"},
-      {"icon": Icons.healing_sharp, "text": "First     Aid"},
+      {"icon": Icons.healing_sharp, "text": "First Aid"},
       {"icon": Icons.medical_services_outlined, "text": "View More"},
     ];
     return Padding(
@@ -21,8 +22,14 @@ class Categories extends StatelessWidget {
           categories.length,
               (index) => CategoryCard(
             icon: categories[index]["icon"],
-            text: categories[index]["text"],
-            press: () {},
+            text: categories[index]["text"].replaceFirst(RegExp(' '), '\n'),
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ProductScreen(category: categories[index]["text"])),
+              );
+            },
           ),
         ),
       ),
@@ -51,7 +58,7 @@ class CategoryCard extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
               height: 55,
               width: 55,
               decoration: BoxDecoration(
@@ -61,7 +68,9 @@ class CategoryCard extends StatelessWidget {
               child: Icon(icon),
             ),
             const SizedBox(height: 5),
-            Text(text!, textAlign: TextAlign.center)
+            Text(text!, textAlign: TextAlign.center,style: const TextStyle(
+              fontSize: 12
+            ),),
           ],
         ),
       ),

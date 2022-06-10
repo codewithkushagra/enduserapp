@@ -1,6 +1,7 @@
 import 'package:enduserapp/components/snack_bar_messages.dart';
 import 'package:enduserapp/database/firestore_database.dart';
 import 'package:enduserapp/database/shared_preference_db.dart';
+import 'package:enduserapp/model/shop_data.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -51,25 +52,8 @@ class EmailAuth {
   static Future<bool> signOut() async {
     bool state = false;
     SharedPreferenceDB.resetPreferences();
+    ShopData.shopList.clear();
     await _auth.signOut();
     return state;
   }
 }
-
-// static postDetailsToFirestore(String name) async {
-//   FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-//   User? user = _auth.currentUser;
-//
-//   endUserModel.email = user!.email;
-//   endUserModel.uid = user.uid;
-//   endUserModel.name = name;
-//   endUserModel.phoneNumber='';
-//   endUserModel.cart=[];
-//   endUserModel.addresses=[];
-//   endUserModel.orders = [];
-//
-//   await firebaseFirestore
-//       .collection('users')
-//       .doc(user.uid)
-//       .set(endUserModel.toMap());
-// }

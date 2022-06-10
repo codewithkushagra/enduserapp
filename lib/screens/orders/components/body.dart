@@ -2,35 +2,30 @@ import 'package:enduserapp/database/firestore_database.dart';
 import 'package:enduserapp/model/cart_data.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'cart_card.dart';
+import '../../../model/order_data.dart';
+import 'oder_card.dart';
 
-class Body extends StatefulWidget {
-  const Body({Key? key}) : super(key: key);
+class OrderBody extends StatefulWidget {
+  const OrderBody({Key? key}) : super(key: key);
 
   @override
-  _BodyState createState() => _BodyState();
+  _OrderBodyState createState() => _OrderBodyState();
 }
 
-class _BodyState extends State<Body> {
+class _OrderBodyState extends State<OrderBody> {
 
 
   Widget getListWidget() {
-    if (Provider.of<CartData>(context).getCartItems.isNotEmpty) {
+    if (Provider.of<OrderData>(context).getOrderItems.isNotEmpty) {
       return ListView.builder(
-        itemCount: Provider.of<CartData>(context).getCartItems.length,
+        itemCount: Provider.of<OrderData>(context).getOrderItems.length,
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
           child: Dismissible(
-            key: Key(Provider.of<CartData>(context)
-                .getCartItems[index]
+            key: Key(Provider.of<OrderData>(context)
+                .getOrderItems[index]
                 .uid
                 .toString()),
-            direction: DismissDirection.endToStart,
-            onDismissed: (direction) {
-              FirestoreDB.removeFromCart(Provider.of<CartData>(context, listen: false).getCartItems[index].uid!);
-              Provider.of<CartData>(context, listen: false)
-                  .removeFromCart(index);
-            },
             background: Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
@@ -47,17 +42,17 @@ class _BodyState extends State<Body> {
                 ],
               ),
             ),
-            child: CartCard(
-                cart: Provider.of<CartData>(context).getCartItems[index]),
+            child: OrderCard(
+                order: Provider.of<OrderData>(context).getOrderItems[index]),
           ),
         ),
       );
     }
     return const Center(
       child: Text(
-        "Cart is Empty",
+        "You haven't placed any order",
         style: TextStyle(
-          fontSize: 25,
+          fontSize: 20,
           color: Colors.black54,
         ),
       ),

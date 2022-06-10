@@ -1,13 +1,13 @@
 class OrderModel{
   String? uid;
   String? productUid;
-  String? product;
+  String? productName;
   String? image;
   String? price;
   String? quantity;
   String? time;
 
-  OrderModel({this.uid,this.product,this.quantity,this.productUid,this.time,this.image,this.price});
+  OrderModel({this.uid,this.productName,this.quantity,this.productUid,this.time,this.image,this.price});
 
   //data from server
   factory OrderModel.fromMap(map){
@@ -17,7 +17,7 @@ class OrderModel{
       time: map['time'],
       image: map['image'],
       quantity: map['quantity'],
-      product: map['product'],
+      productName: map['productName'],
       price: map['price']
     );
   }
@@ -28,7 +28,7 @@ class OrderModel{
       'uid': uid,
       'userUid': productUid,
       'quantity': quantity,
-      'product': product,
+      'productName': productName,
       'time': time,
       'image': image,
       'price': price,

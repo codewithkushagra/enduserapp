@@ -1,3 +1,4 @@
+import 'package:enduserapp/screens/orders/components/body.dart';
 import 'package:flutter/material.dart';
 import 'package:enduserapp/model/order_model.dart';
 import 'package:enduserapp/model/cart_data.dart';
@@ -10,13 +11,6 @@ class OrdersScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int getSum(){
-      int sum=0;
-      for(OrderModel element in Provider.of<CartData>(context).getCartItems){
-        sum=sum+int.parse(element.price!);
-      }
-      return sum;
-    }
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
@@ -33,12 +27,10 @@ class OrdersScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: Center(
           child: Column(
-            children: [
-              const SizedBox(height: 15,),
-              // Provider.of<UserData>(context).getCartItems.isNotEmpty
-
-              const SizedBox(height: 15,),
-              const Expanded(child: Body()),
+            children: const [
+               SizedBox(height: 15,),
+               SizedBox(height: 15,),
+               Expanded(child: OrderBody()),
             ],
           ),
         ),
